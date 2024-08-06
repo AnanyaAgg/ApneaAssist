@@ -180,7 +180,7 @@ with tab4:
 		youtube_iframe1 = f'''
 		<iframe
 		  width="100%"
-		  height="100"
+		  height="350"
 		  src="{youtube_url1}"
 		  frameborder="0"
 		  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
