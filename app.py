@@ -175,7 +175,7 @@ with tab4:
 		></iframe>
 		'''
 		st.markdown(gofundme_iframe, unsafe_allow_html=True)
-	with col2:
+
 		youtube_url1 = "https://www.youtube.com/embed/g665P3z8sGk"
 		youtube_iframe1 = f'''
 		<iframe
@@ -188,7 +188,8 @@ with tab4:
 		></iframe>
 		'''
 		st.markdown(youtube_iframe1, unsafe_allow_html=True)
-	
+		
+	with col2:
 		youtube_url2 = "https://www.youtube.com/embed/eKItaKdLxPA?si=VTXdSF4Jmd0XQ5oY"
 		youtube_iframe2 = f'''
 		<iframe
