@@ -162,25 +162,22 @@ with tab3:
 with tab4:
 	st.header("Join the Against Obstructive Sleep Apnea by Donating Now!")
 	col5 = st.columns(2)
+	with col5[0]:
+		gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
+		
+		gofundme_iframe = f'''
+		<iframe
+		  src="{gofundme_url}"
+		  style="height: 312px; width: 100%;"
+		  frameborder="0"
+		  scrolling="no"
+		></iframe>
+		'''
+		st.markdown(gofundme_iframe, unsafe_allow_html=True)
 	with col5[1]:
 		st.video("https://youtu.be/g665P3z8sGk")
 		st.video("https://youtu.be/eKItaKdLxPA?si=VTXdSF4Jmd0XQ5oY")
-	# Updated GoFundMe embed link for the medium widget
-	gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
-	
-	# Create an iframe for the GoFundMe widget with adjusted size
-	gofundme_iframe = f'''
-	<iframe
-	  src="{gofundme_url}"
-	  style="height: 312px; width: 100%;"
-	  frameborder="0"
-	  scrolling="no"
-	></iframe>
-	'''
-	
-	# Display the iframe in Streamlit
-	st.markdown(gofundme_iframe, unsafe_allow_html=True)
-		  
+			  
 with tab5:	
 	engInfo4 = "English"
 	spanInfo4 = "Spanish"
