@@ -168,9 +168,9 @@ with tab4:
 		gofundme_iframe = f'''
 		<iframe
 		  src="{gofundme_url}"
-		  style="height: 312px; width: 100%;"
+		  style="height: 160px; width: 65%;"
 		  frameborder="0"
-		  scrolling="no"
+		  scrolling="yes"
 		></iframe>
 		'''
 		st.markdown(gofundme_iframe, unsafe_allow_html=True)
