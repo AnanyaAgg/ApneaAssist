@@ -165,16 +165,16 @@ with tab4:
 	with col5[1]:
 		st.video("https://youtu.be/g665P3z8sGk")
 		st.video("https://youtu.be/eKItaKdLxPA?si=VTXdSF4Jmd0XQ5oY")
-	# GoFundMe embed link
-	gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/large?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
+	# Updated GoFundMe embed link for the medium widget
+	gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
 	
-	# Create an iframe for the GoFundMe widget
+	# Create an iframe for the GoFundMe widget with adjusted size
 	gofundme_iframe = f'''
 	<iframe
 	  src="{gofundme_url}"
-	  style="height: 1000px; width: 100%;"
+	  style="height: 312px; width: 100%;"
 	  frameborder="0"
-	  scrolling="yes"
+	  scrolling="no"
 	></iframe>
 	'''
 	
