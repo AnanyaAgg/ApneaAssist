@@ -162,7 +162,7 @@ with tab3:
 with tab4:
 	st.header("Join the Against Obstructive Sleep Apnea by Donating Now!")
 	col5 = st.columns(2)
-	with.col5[1]:
+	with col5[1]:
 		st.video("https://youtu.be/g665P3z8sGk")
 		st.video("https://youtu.be/eKItaKdLxPA?si=VTXdSF4Jmd0XQ5oY")
 		  
