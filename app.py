@@ -169,7 +169,7 @@ with tab4:
 		gofundme_iframe = f'''
 		<iframe
 		  src="{gofundme_url}"
-		  style="height: 180px; width: 75%;"
+		  style="height: 180px; width: 100%;"
 		  frameborder="0"
 		  scrolling="yes"
 		></iframe>
