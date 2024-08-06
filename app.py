@@ -160,10 +160,7 @@ with tab3:
     			embed_facebook_post(url)
 
 with tab4:
-	<iframe
-		src="https://www.gofundme.com/static/js/embed.js"
-		style="height: 450px; width: 100%;"
-	></iframe>
+	<iframe src="https://www.gofundme.com/static/js/embed.js" style="height: 450px; width: 100%;" ></iframe>
 with tab5:	
 	engInfo4 = "English"
 	spanInfo4 = "Spanish"
