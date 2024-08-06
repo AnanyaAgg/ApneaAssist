@@ -4,7 +4,7 @@ import joblib
 
 st.set_page_config(layout="wide")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Home", "Screening Quiz", "More Information", "About me + Contact Us"])
+tab1, tab2, tab3, tab4, tab5= st.tabs(["Home", "Screening Quiz", "More Information", "Donate", "About me + Contact Us"])
 data = np.random.randn(10, 1)
 
 @st.cache_resource
@@ -159,7 +159,12 @@ with tab3:
 		for url in post_urls:
     			embed_facebook_post(url)
 
-with tab4:	
+with tab4:
+	<iframe
+		src="https://www.gofundme.com/static/js/embed.js"
+		style="height: 450px; width: 100%;"
+	></iframe>
+with tab5:	
 	engInfo4 = "English"
 	spanInfo4 = "Spanish"
 	hindiInfo4 = "Hindi"
