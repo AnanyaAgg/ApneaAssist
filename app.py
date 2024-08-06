@@ -176,8 +176,31 @@ with tab4:
 		'''
 		st.markdown(gofundme_iframe, unsafe_allow_html=True)
 	with col2:
-		st.video("https://youtu.be/g665P3z8sGk")
-		st.video("https://youtu.be/eKItaKdLxPA?si=VTXdSF4Jmd0XQ5oY")
+		youtube_url1 = "https://www.youtube.com/embed/g665P3z8sGk"
+		youtube_iframe1 = f'''
+		<iframe
+		  width="100%"
+		  height="450"
+		  src="{youtube_url1}"
+		  frameborder="0"
+		  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		  allowfullscreen
+		></iframe>
+		'''
+		st.markdown(youtube_iframe1, unsafe_allow_html=True)
+	
+		youtube_url2 = "https://www.youtube.com/embed/eKItaKdLxPA?si=VTXdSF4Jmd0XQ5oY"
+		youtube_iframe2 = f'''
+		<iframe
+		  width="100%"
+		  height="450"
+		  src="{youtube_url2}"
+		  frameborder="0"
+		  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		  allowfullscreen
+		></iframe>
+		'''
+		st.markdown(youtube_iframe2, unsafe_allow_html=True)
 			  
 with tab5:	
 	engInfo4 = "English"
