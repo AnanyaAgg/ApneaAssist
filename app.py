@@ -161,7 +161,7 @@ with tab3:
 
 with tab4:
 	st.header("Join the Against Obstructive Sleep Apnea by Donating Now!")
-	col1, col2 = st.columns([0.4, 0.6])
+	col1, col2 = st.columns([0.38, 0.62])
 	
 	with col1:
 		gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
