@@ -290,6 +290,7 @@ with tab6:
 		st.write("Sleeping on your side instead of your back can help reduce OSA symptoms.")
 	with st.expander("What is the difference between OSA and central sleep apnea?"):
 		st.write("OSA is caused by a physical blockage of the airway, while central sleep apnea is due to the brain not sending proper signals to breathe.")
+	st.write("Questions About Diagnosis and Management Options")
 	with st.expander("What are the different methods for diagnosing OSA?"):
 		st.write("Diagnosis methods include in-lab sleep studies and home sleep apnea tests, both of which monitor your sleep and breathing.")
 	with st.expander("How does a sleep study work?"):
