@@ -226,11 +226,11 @@ with tab5:
 		with col4[1]:
 			st.subheader("Contact Us")
 			st.write("Contact us here!")
-			st.write("Email: apneaassist@gmail.com")
+			st.link_button("Click here to find all my links & forms of contact!", "https://linktr.ee/apneaast")
 			st.link_button("YouTube", "https://youtube.com/@apneaassist?si=aWi0IgocfLbwCBuZ")
 			st.link_button("FaceBook", "https://www.facebook.com/profile.php?id=61560444242747")
 			st.link_button("GoFundMe", "https://gofund.me/6858e97d")
-			st.link_button("Click here to find all my links & forms of contact!", "https://linktr.ee/apneaast")
+			st.write("Email: apneaassist@gmail.com")
 	elif selected_language4 == "Spanish":
 		with col4[0]:
 			st.subheader("Acerca de Mí")
@@ -238,11 +238,11 @@ with tab5:
 		with col4[1]:
 			st.subheader("Contacta con Nosotras")
 			st.write("Contacta con nosotras aquí!")
-			st.write("Email: apneaassist@gmail.com")
+			st.link_button("¡Haz click aquí para encontrar todos mis enlaces y formas de contacto!", "https://linktr.ee/apneaast")
 			st.link_button("YouTube", "https://youtube.com/@apneaassist?si=aWi0IgocfLbwCBuZ")
 			st.link_button("FaceBook", "https://www.facebook.com/profile.php?id=61560444242747")
 			st.link_button("GoFundMe", "https://gofund.me/6858e97d")
-			st.link_button("¡Haz click aquí para encontrar todos mis enlaces y formas de contacto!", "https://linktr.ee/apneaast")
+			st.write("Email: apneaassist@gmail.com")
 	elif selected_language4 == "Hindi":
 		with col4[0]:
 			st.subheader("मेरे बारे में")
@@ -250,11 +250,12 @@ with tab5:
 		with col4[1]:
 			st.subheader("संपर्क करें")
 			st.write("हमसे यहां संपर्क करें!")
-			st.write("ईमेल: apneaassist@gmail.com")
+			st.link_button("मेरे सभी लिंक और संपर्क फ़ॉर्म पाने के लिए यहां क्लिक करें!", "https://linktr.ee/apneaast")
 			st.link_button("यूट्यूब", "https://youtube.com/@apneaassist?si=aWi0IgocfLbwCBuZ")
 			st.link_button("फेसबुक", "https://www.facebook.com/profile.php?id=61560444242747")
 			st.link_button("गोफंडमी", "https://gofund.me/6858e97d")
-			st.link_button("मेरे सभी लिंक और संपर्क फ़ॉर्म पाने के लिए यहां क्लिक करें!", "https://linktr.ee/apneaast")
+			st.write("ईमेल: apneaassist@gmail.com")
+			
 		
 
     
