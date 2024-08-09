@@ -262,6 +262,71 @@ with tab6:
 	st.write("General Questions about OSA")
 	with st.expander("What is Obstructive Sleep Apnea (OSA)?"):
 		st.write("OSA is a sleep disorder where the airway becomes blocked during sleep, causing breathing to stop and start repeatedly.")
-		
+	with st.expander("What causes OSA?):
+		st.write("OSA is often caused by the relaxation of throat muscles, excess weight, and anatomical factors like a large neck or tonsils.")
+	with st.expander("What are the common symptoms of OSA?"):
+		st.write("Common symptoms include loud snoring, daytime fatigue, morning headaches, and waking up gasping for air.")
+	with st.expander("How is OSA diagnosed?"):
+		st.write("OSA is diagnosed through a sleep study, either at a clinic or using a home sleep test that monitors breathing patterns.")	
+	with st.expander("Who is most at risk for developing OSA?"):
+		st.write("Risk factors include being overweight, having a family history of OSA, being male, and being over 40, though anyone can develop it.")	
+	with st.expander("Can children have OSA?"):
+		st.write("Yes, children can have OSA, often due to enlarged tonsils or adenoids, and it can affect their growth and development.")
+	with st.expander("What are the long-term health risks of untreated OSA?"):
+		st.write("Untreated OSA can lead to serious health issues like heart disease, stroke, high blood pressure, and diabetes.")
+	with st.expander("Is OSA hereditary"):
+		st.write("Yes, there can be a genetic predisposition to OSA, especially related to anatomical traits.")
+	with st.expander("What lifestyle changes can help manage OSA?"):
+		st.write("Losing weight, avoiding alcohol before bed, quitting smoking, and changing sleep positions can help manage OSA.")
+	with st.expander("How does OSA affect daily life and overall well-being?"):
+		st.write("OSA can cause chronic fatigue, poor concentration, mood swings, and decreased overall quality of life.")
+	with st.expander("Is OSA a common condition?"):
+		st.write("Yes, OSA is relatively common, affecting an estimated 3-7% of adults, though many cases go undiagnosed.")
+	with st.expander("Can OSA be cured?"):
+		st.write("OSA is a chronic condition, however, if diagnosed early, it can be effectively managed with lifestyle changes, CPAP therapy, or surgery.")
+	with st.expander("How does OSA differ from other sleep disorders like insomnia?"):
+		st.write("OSA is a breathing disorder during sleep, while insomnia is the inability to fall or stay asleep.")
+	with st.expander("Are there any specific sleeping positions that help with OSA?"):
+		st.write("Sleeping on your side instead of your back can help reduce OSA symptoms.")
+	with st.expander("What is the difference between OSA and central sleep apnea?"):
+		st.write("OSA is caused by a physical blockage of the airway, while central sleep apnea is due to the brain not sending proper signals to breathe.")
+	with st.expander("What are the different methods for diagnosing OSA?"):
+		st.write("Diagnosis methods include in-lab sleep studies and home sleep apnea tests, both of which monitor your sleep and breathing.")
+	with st.expander("How does a sleep study work?"):
+		st.write("During a sleep study, sensors track your breathing, oxygen levels, heart rate, and sleep stages to diagnose OSA.")
+	with st.expander("What is a home sleep test, and how accurate is it?"):
+		st.write("A home sleep test is a simplified version of a sleep study that you do at home; it’s accurate for diagnosing moderate to severe OSA.")
+	with st.expander("What are the treatment options for OSA?"):
+		st.write("Treatment options include CPAP therapy, oral appliances, lifestyle changes, and in some cases, surgery.")
+	with st.expander("How does a CPAP machine work?"):
+		st.write("A CPAP machine keeps your airway open by delivering a constant stream of air through a mask while you sleep.")
+	with st.expander("Are there alternatives to CPAP therapy?"):
+		st.write("Yes, alternatives include oral appliances, weight loss, positional therapy, and surgery in some cases.")
+	with st.expander("Can lifestyle changes alone manage OSA?"):
+		st.write("Lifestyle changes can help mild cases, but moderate to severe OSA usually requires medical treatment.")
+	with st.expander("What is the role of surgery in treating OSA?"):
+		st.write("Surgery may be an option if other treatments fail, and it involves removing or altering tissue in the airway.")
+	with st.expander("How effective are dental devices in managing OSA?"):
+		st.write("Dental devices can be effective for mild to moderate OSA by repositioning the jaw to keep the airway open.")
+	with st.expander("What is the cost of getting diagnosed and treated for OSA?"):
+		st.write("Costs vary widely depending on insurance coverage, the type of test, and treatment, but many options are available to reduce out-of-pocket expenses.")
+	with st.expander("How often should someone with OSA see a doctor?"):
+		st.write("Regular follow-ups, usually once a year or more if symptoms change, are recommended for ongoing management.")
+	with st.expander("What is the success rate of OSA treatments?"):
+		st.write("Treatment success varies, but CPAP and other therapies are highly effective when used consistently.")
+	with st.expander("Can OSA symptoms improve without medical intervention?"):
+		st.write("Mild symptoms may improve with lifestyle changes, but medical intervention is often necessary for effective management.")
+	with st.expander("Are there any new treatments or technologies for OSA?"):
+		st.write("New treatments include advanced CPAP machines, implantable devices like Inspire, and ongoing research into less invasive options.")
+	with st.expander("How does weight loss impact OSA?"):
+		st.write("Weight loss can significantly reduce OSA severity by decreasing the amount of tissue that obstructs the airway.")
 
+
+	
+
+    
+
+
+
+			
 
