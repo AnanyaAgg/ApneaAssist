@@ -379,16 +379,6 @@ with tab6:
 	with st.expander("Can Apnea Assist help with other sleep disorders?"):
 		st.write("While our focus is on OSA, some of our resources and tips may be helpful for managing other sleep disorders.")
 
-	st.header(":mailbox: Get In Touch With Me!")
-	contact_form = """
-	<form action="https://formsubmit.co/apneaassist@gmail.com" method="POST">
-	     <input type="text" name="name" required>
-	     <input type="email" name="email" required>
-	     <button type="submit">Send</button>
-	</form>
- 	"""
-		
-	st.markdown(contact_form, unsafe_allow_html=True)
 	
 	
 
