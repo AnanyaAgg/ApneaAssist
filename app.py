@@ -386,6 +386,7 @@ with tab6:
 	     <input type="text" name="name" placeholder="Your name" required>
 	     <input type="email" name="email" placeholder="Your email" required>
 	     <textarea name="message" placeholder="Your message here"></textarea>
+             <input type="hidden" name="_next" value="https://apneaassist.streamlit.app/?lang4=English#find-out-more-about-osa">
 	     <button type="submit">Send</button>
 	</form>
  	"""
