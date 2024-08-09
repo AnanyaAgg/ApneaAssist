@@ -4,7 +4,7 @@ import joblib
 
 st.set_page_config(layout="wide")
 
-tab1, tab2, tab3, tab4, tab5= st.tabs(["Home", "Screening Quiz", "More Information", "Donate", "About me + Contact Us"])
+tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["Home", "Screening Quiz", "More Information", "Donate", "About me + Contact Us", "Q&A"])
 data = np.random.randn(10, 1)
 
 @st.cache_resource
@@ -255,11 +255,13 @@ with tab5:
 			st.link_button("फेसबुक", "https://www.facebook.com/profile.php?id=61560444242747")
 			st.link_button("गोफंडमी", "https://gofund.me/6858e97d")
 			st.write("ईमेल: apneaassist@gmail.com")
-			
+
+with tab6:
+	st.subheader("Have questions? Check here!")
+	st.write("Find answers to your questions about OSA and about Apnea Assist! If you can't find an answer here, please let me know by typing it in the feedback form below.")
+	st.write("General Questions about OSA")
+	with st.expander("What is Obstructive Sleep Apnea (OSA)?")
+		st.write("OSA is a sleep disorder where the airway becomes blocked during sleep, causing breathing to stop and start repeatedly.")
 		
 
-    
 
-
-
-			
