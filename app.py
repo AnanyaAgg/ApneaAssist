@@ -262,7 +262,7 @@ with tab6:
 	st.write("General Questions about OSA")
 	with st.expander("What is Obstructive Sleep Apnea (OSA)?"):
 		st.write("OSA is a sleep disorder where the airway becomes blocked during sleep, causing breathing to stop and start repeatedly.")
-	with st.expander("What causes OSA?):
+	with st.expander("What causes OSA?"):
 		st.write("OSA is often caused by the relaxation of throat muscles, excess weight, and anatomical factors like a large neck or tonsils.")
 	with st.expander("What are the common symptoms of OSA?"):
 		st.write("Common symptoms include loud snoring, daytime fatigue, morning headaches, and waking up gasping for air.")
