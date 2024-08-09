@@ -382,8 +382,9 @@ with tab6:
 	st.header(":mailbox: Get In Touch With Me!")
 	contact_form = """
 	<form action="https://formsubmit.co/apneaassist@gmail.com" method="POST">
-	     <input type="text" name="name" required>
-	     <input type="email" name="email" required>
+	     <input type="text" name="name" placeholder="Your name" required>
+	     <input type="email" name="email" placeholder="Your email" required>
+	     <textarea name="message" placeholder="Your message here"></textarea>
 	     <button type="submit">Send</button>
 	</form>
  	"""
