@@ -290,6 +290,9 @@ with tab6:
 		st.write("Sleeping on your side instead of your back can help reduce OSA symptoms.")
 	with st.expander("What is the difference between OSA and central sleep apnea?"):
 		st.write("OSA is caused by a physical blockage of the airway, while central sleep apnea is due to the brain not sending proper signals to breathe.")
+	with st.expander("What are the biggest misconceptions about OSA?"):
+		st.write("A common misconception is that OSA only affects older, overweight men, when in fact, it can affect anyone, including women and children.")
+	
 	st.write("Questions About Diagnosis and Management Options")
 	with st.expander("What are the different methods for diagnosing OSA?"):
 		st.write("Diagnosis methods include in-lab sleep studies and home sleep apnea tests, both of which monitor your sleep and breathing.")
@@ -321,7 +324,67 @@ with tab6:
 		st.write("New treatments include advanced CPAP machines, implantable devices like Inspire, and ongoing research into less invasive options.")
 	with st.expander("How does weight loss impact OSA?"):
 		st.write("Weight loss can significantly reduce OSA severity by decreasing the amount of tissue that obstructs the airway.")
+	with st.expander("What other resources do you recommend for someone newly diagnosed with OSA?):
+		st.write("We recommend consulting a sleep specialist and exploring reputable sources like the American Academy of Sleep Medicine.")
+	
+	st.write("Questions About Apnea Assist")
+	with st.expander("What is Apnea Assist?"):
+		st.write("Apnea Assist is a platform dedicated to raising awareness about OSA and providing resources, including an intelligent screening quiz and educational content.")
+	with st.expander("How does your intelligent screening quiz work?"):
+		st.write("Our quiz uses AI/ML models to assess your risk of OSA, based on your responses to a series of health-related questions.")
+	with st.expander("Is the screening quiz on Apnea Assist accurate?"):
+		st.write("Yes, it’s designed to be more accurate than traditional tools by incorporating a broader range of data points.")
+	with st.expander("What makes Apnea Assist different from other OSA resources?"):
+		st.write("Apnea Assist combines advanced screening tools with comprehensive educational content and community support.")
+	with st.expander("Is Apnea Assist affiliated with any medical institutions?"):
+		st.write("We are an independent platform, but we base our resources and tools on scientifically validated research and expert input.")
+	with st.expander("How can Apnea Assist help me if I suspect I have OSA?"):
+		st.write("Take our screening quiz, explore educational resources, and connect with healthcare professionals for further evaluation.")
+	with st.expander("Do you offer personalized recommendations after the screening quiz?"):
+		st.write("Based on your quiz results, we provide  advice and next steps for managing your risk. We are working on providng more personalized support for each of our users.")
+	with st.expander("How often is the content on Apnea Assist updated?"):
+		st.write("We regularly update our content to reflect the latest research and developments in OSA treatment and management.")
+	with st.expander("Can I trust the information on Apnea Assist?"):
+		st.write("Yes, our content is carefully curated and based on reliable, scientifically-backed sources.")
+	with st.expander("Is Apnea Assist free to use?"):
+		st.write("Yes, our platform is free to access, including the screening quiz and all educational materials.")
+	with st.expander("How do you protect the privacy of users on Apnea Assist?"):
+		st.write("Personal information is not required to submit the screening form and is only used to contact users with additional materials based on their quiz results.")
+	with st.expander("Are there any upcoming features or tools on Apnea Assist?"):
+		st.write("Yes, we are planning to expand our tools, including a mobile app, more interactive content, and additional world languages.")
+	with st.expander("How do I sign up for updates or newsletters from Apnea Assist?"):
+		st.write("You can follow our Facebook account and subscribe to our YouTube! Both links can we found by scanning thr QR code on the 'contact us' page.")
+	with st.expander("Can I contribute or share my story on Apnea Assist?"):
+		st.write("We are currently working on setting up a community blog on our website, but in the mean time, feel free to post comments to any of our content on other platforms!")
+	with st.expander("How can I support Apnea Assist’s mission?"):
+		st.write("You can support us by spreading the word, donating to our gofundme, and participating in our events and campaigns. Reach out to learn more!")
+	with st.expander("Is Apnea Assist working with any partners or organizations?"):
+		st.write("We’re in the process of building partnerships with healthcare providers and organizations to broaden our reach and impact.")
+	with st.expander("How is Apnea Assist funded?"):
+		st.write("Apnea Assist is funded through generound donations on our gofundme, please visit our 'Donate' page to learn more and support our cause!")
+	with st.expander("What feedback have you received from users?"):
+		st.write("Users have appreciated the accessibility and accuracy of our tools, as well as the comprehensive educational content.")
+	with st.expander("Can I speak with someone who has used Apnea Assist?"):
+		st.write("While we don’t share personal contacts, we are working setting up a community blog page where users can post testimonials and find support.")
+	with st.expander("How can I share Apnea Assist with others?"):
+		st.write("You can share our website link or out QR code, share our YouTube vidoes and Facebook blogs, or use social media to spread the word.")
+	with st.expander("How can healthcare providers collaborate with Apnea Assist?"):
+		st.write("We welcome collaborations with healthcare providers to integrate our tools into their practices and improve patient care.")
+	with st.expander("Can Apnea Assist be used by healthcare professionals for their patients?"):
+		st.write("Yes, healthcare professionals can use our screening tools and resources to assist in diagnosing and managing OSA. We hope that doctors recommend Apnea Assist as a first step in at-risk patients' journey with diagnosing OSA.")
+	with st.expander("What role does technology play in Apnea Assist?"):
+		st.write("Technology, particularly AI/ML, is central to our platform, helping us provide more accurate screenings and personalized recommendations.")
+	with st.expander("Is there a mobile app for Apnea Assist?"):
+		st.write("We’re currently developing a mobile app to make our tools even more accessible.")
+	with st.expander("Can Apnea Assist help with other sleep disorders?"):
+		st.write("While our focus is on OSA, some of our resources and tips may be helpful for managing other sleep disorders.")
 
+
+
+
+  
+
+			 
 
 	
 
