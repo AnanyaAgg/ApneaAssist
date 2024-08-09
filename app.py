@@ -260,7 +260,7 @@ with tab6:
 	st.subheader("Have questions? Check here!")
 	st.write("Find answers to your questions about OSA and about Apnea Assist! If you can't find an answer here, please let me know by typing it in the feedback form below.")
 	st.write("General Questions about OSA")
-	with st.expander("What is Obstructive Sleep Apnea (OSA)?")
+	with st.expander("What is Obstructive Sleep Apnea (OSA)?"):
 		st.write("OSA is a sleep disorder where the airway becomes blocked during sleep, causing breathing to stop and start repeatedly.")
 		
 
