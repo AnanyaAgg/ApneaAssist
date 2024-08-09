@@ -324,7 +324,7 @@ with tab6:
 		st.write("New treatments include advanced CPAP machines, implantable devices like Inspire, and ongoing research into less invasive options.")
 	with st.expander("How does weight loss impact OSA?"):
 		st.write("Weight loss can significantly reduce OSA severity by decreasing the amount of tissue that obstructs the airway.")
-	with st.expander("What other resources do you recommend for someone newly diagnosed with OSA?):
+	with st.expander("What other resources do you recommend for someone newly diagnosed with OSA?"):
 		st.write("We recommend consulting a sleep specialist and exploring reputable sources like the American Academy of Sleep Medicine.")
 	
 	st.write("Questions About Apnea Assist")
