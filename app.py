@@ -386,6 +386,7 @@ with tab6:
 	     <input type="email" name="email" required>
 	     <button type="submit">Send</button>
 	</form>
+ 	"""
 		
 	st.markdown(contact_form, unsafe_allow_html=True)
 	
