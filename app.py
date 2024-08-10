@@ -519,7 +519,7 @@ with tab6:
 		     <input type="email" name="email" placeholder="Tu correo electrónico" required>
 		     <textarea name="message" placeholder="Tu mensaje aquí"></textarea>
 	             <input type="hidden" name="_next" value="https://apneaassist.streamlit.app/?lang4=English#find-out-more-about-osa">
-		     <button type="entregar">Send</button>
+		     <button type="submit">Send</button>
 		</form>
 	 	"""
 			
@@ -610,7 +610,7 @@ with tab6:
 		     <input type="email" name="email" placeholder="आपका ईमेल" required>
 		     <textarea name="message" placeholder="आपका सन्देश यहां"></textarea>
 	             <input type="hidden" name="_next" value="https://apneaassist.streamlit.app/?lang4=English#find-out-more-about-osa">
-		     <button type="जमा">Send</button>
+		     <button type="submit">Send</button>
 		</form>
 	 	"""
 			
