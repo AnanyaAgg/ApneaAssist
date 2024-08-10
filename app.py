@@ -260,7 +260,7 @@ with tab6:
 	engInfo6 = "English"
 	spanInfo6 = "Spanish"
 	hindiInfo6 = "Hindi"
-	languages6 = {"English": engInfo4, "Spanish": spanInfo4, "Hindi": hindiInfo4}
+	languages6 = {"English": engInfo6, "Spanish": spanInfo6, "Hindi": hindiInfo6}
 
 	sel_lang6 = st.radio(
 		"Language",
@@ -271,7 +271,7 @@ with tab6:
 	selected_language6 = set_language(4, languages6)
 	
 	st.markdown(f"Selected Language: {selected_language6}")
-	if selected_language4 == "English":
+	if selected_language6 == "English":
 		st.subheader("Have questions? Check here!")
 		st.write("Find answers to your questions about OSA and about Apnea Assist! If you can't find an answer here, please let me know by typing it in the feedback form below.")
 		st.write("General Questions about OSA")
@@ -415,7 +415,7 @@ with tab6:
 		
 		local_css("style/style.css")
 		
-	if selected_language4 == "Spanish":
+	if selected_language6 == "Spanish":
 		st.subheader("¿Tienes preguntas? ¡Consulta aquí!")
 		st.write("Encuentra respuestas a tus preguntas sobre la apnea obstructiva del sueño (AOS) y sobre Apnea Assist. Si no puedes encontrar una respuesta aquí, por favor házmelo saber llenando el formulario de comentarios a continuación.")
 		st.write("Preguntas Generales sobre AOS")
@@ -530,7 +530,7 @@ with tab6:
 		        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 		local_css("style/style.css")
 
-	if selected_language4 == "Hindi":
+	if selected_language6 == "Hindi":
 		st.subheader("कोई सवाल है? यहाँ पूछें!")
 		st.write("अपनी ऑब्सट्रक्टिव स्लीप एपनिया (OSA) और अप्निया असिस्ट से संबंधित सवालों के जवाब यहाँ पाएं। अगर आपको यहाँ जवाब नहीं मिलता है, तो कृपया नीचे दिए गए फीडबैक फॉर्म को भरकर मुझे बताएं।")
 		st.write("OSA के सामान्य प्रश्न")
