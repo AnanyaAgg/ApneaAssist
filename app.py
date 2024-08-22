@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 from google.cloud import firestore
+import time
 
 # Authenticate to Firestore with the JSON account key.
 db = firestore.Client.from_service_account_json("firestore-key.json")
@@ -94,7 +95,7 @@ with tab2:
 		name = st.text_input("Please enter your name (first is fine)")
 		contact = st.text_input("Please enter a form of contact i.e. email, phone, etc.")
 		with st.expander("What is your gender by birth?"):
-			genre = st.radio("", ["male", "female"])
+			gender = st.radio("", ["male", "female"])
 		age = st.slider('What is your age?', 18, 100)
 		sle = st.slider("On average, what is your daily sleep duration in hours?", 1, 24)
 		weight = st.slider("How much do you weigh? in lbs", 80, 300)
@@ -136,19 +137,57 @@ with tab2:
 				bm = 2
 			else:
 				bm = 3
-			if genre == 'female':
+			if gender == 'female':
 				gn = 0
 			else:
 				gn = 1
 			inp = [[gn,age,sle,qs,physical,sl,bm,hr,steps,sbp,dbp]]
 			model = load_model()
 			new = model.predict(inp)
+			prediction = ""
 			if new == 0:
 				st.write("You have a healthy sleep")
+				prediction = "healthy"
 			elif new == 1:
 				st.write("You might have Insomnia, please visit a doctor")
+				prediction = "insomnia"
 			elif new == 2:
 				st.write("You might have Sleep Apnea, please visit a doctor")
+				prediction = "sleep apnea"
+			ts = time.time()
+			ts = str(ts).split('.')[0]
+			# This time, we're creating a NEW post reference for Apple
+			doc_ref = db.collection("userData").document(ts)
+			
+			# And then uploading some data to that reference
+			doc_ref.set({
+				"username": name,
+				"contact": contact,
+				"age": age,
+				"sleep duration": sle,
+				"weight": weight,
+				"height": height,
+				"systolic bp": sbp,
+				"diastolic bp": dbp,
+				"heart rate": hr,
+				"daily steps": steps,
+				"daily physical activity": physical,
+				"JSS1": qs1,
+				"JSS2": qs2,
+				"JSS3": qs3,
+				"JSS4": qs4,
+				"PSS1": sl1,
+				"PSS2": sl2,
+				"PSS3": sl3,
+				"PSS4": sl4,
+				"PSS5": sl5,
+				"PSS6": sl6,
+				"PSS7": sl7,
+				"PSS8": sl8,
+				"PSS9": sl9,
+				"PSS10": sl10,
+				"prediction": prediction
+			})
 
 with tab3:
 	st.subheader("Find out more about OSA")
