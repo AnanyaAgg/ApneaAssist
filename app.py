@@ -1,6 +1,20 @@
 import streamlit as st
 import numpy as np
 import joblib
+from google.cloud import firestore
+
+# Authenticate to Firestore with the JSON account key.
+db = firestore.Client.from_service_account_json("firestore-key.json")
+
+# Create a reference to the Google post.
+doc_ref = db.collection("userData").document("4T8rJNJL3JwgjsGr5uaU")
+
+# Then get the data at that reference.
+doc = doc_ref.get()
+
+# Let's see what we got!
+st.write("The id is: ", doc.id)
+st.write("The contents are: ", doc.to_dict())
 
 st.set_page_config(layout="wide")
 
