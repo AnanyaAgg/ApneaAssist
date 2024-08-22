@@ -77,10 +77,11 @@ with tab1:
 with tab2:
 	st.header("Get your screening results today!")
 	with st.form("my_form"):
+		name = st.text_input("Please enter your name (first is fine)")
+		contact = st.text_input("Please enter a form of contact i.e. email, phone, etc.")
 		with st.expander("What is your gender by birth?"):
 			genre = st.radio("", ["male", "female"])
 		age = st.slider('What is your age?', 18, 100)
-		oc = st.text_input("What is your occupation?")
 		sle = st.slider("On average, what is your daily sleep duration in hours?", 1, 24)
 		weight = st.slider("How much do you weigh? in lbs", 80, 300)
 		height = st.slider("How tall are you? in inches", 48, 84)
