@@ -8,7 +8,7 @@ import time
 import json
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="ApneaAssist")
+db = firestore.Client(credentials=creds, project="apneaassist-acf2c")
 
 # Create a reference to the Google post.
 doc_ref = db.collection("userData").document("4T8rJNJL3JwgjsGr5uaU")
