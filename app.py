@@ -3,6 +3,7 @@ import numpy as np
 import joblib
 from google.cloud import firestore
 import time
+from google.oauth2 import service_account
 
 # Authenticate to Firestore with the JSON account key.
 import json
