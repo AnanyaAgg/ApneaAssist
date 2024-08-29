@@ -5,6 +5,8 @@ from google.cloud import firestore
 import time
 from google.oauth2 import service_account
 
+st.set_page_config(layout="wide")
+
 # Authenticate to Firestore with the JSON account key.
 import json
 key_dict = json.loads(st.secrets["textkey"])
@@ -21,7 +23,6 @@ doc = doc_ref.get()
 st.write("The id is: ", doc.id)
 st.write("The contents are: ", doc.to_dict())
 
-st.set_page_config(layout="wide")
 
 tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["Home", "Screening Quiz", "More Information", "Donate", "About me + Contact Us", "Q&A"])
 data = np.random.randn(10, 1)
