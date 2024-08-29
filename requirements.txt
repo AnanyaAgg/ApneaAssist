@@ -3,3 +3,4 @@ numpy
 joblib
 google-cloud-firestore
 google-auth
+scikit-learn
