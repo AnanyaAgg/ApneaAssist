@@ -1,6 +1,6 @@
 streamlit
-numpy
 joblib
 google-cloud-firestore
 google-auth
 scikit-learn==1.2.2
+numpys
