@@ -13,16 +13,6 @@ key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="apneaassist-acf2c")
 
-# Create a reference to the Google post.
-doc_ref = db.collection("userData").document("4T8rJNJL3JwgjsGr5uaU")
-
-# Then get the data at that reference.
-doc = doc_ref.get()
-
-# Let's see what we got!
-st.write("The id is: ", doc.id)
-st.write("The contents are: ", doc.to_dict())
-
 
 tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["Home", "Screening Quiz", "More Information", "Donate", "About me + Contact Us", "Q&A"])
 data = np.random.randn(10, 1)
