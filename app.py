@@ -4,6 +4,8 @@ import joblib
 from google.cloud import firestore
 import time
 from google.oauth2 import service_account
+import streamlit.components.v1 as components
+
 
 st.set_page_config(layout="wide")
 
@@ -21,22 +23,30 @@ data = np.random.randn(10, 1)
 def load_model():
 	mod = joblib.load('best_random_forest_model.joblib')
 	return mod
-
+	
 def set_language(tab_number, languages_key):
     if f"selected_language{tab_number}" in st.session_state:
         lang = st.session_state[f"selected_language{tab_number}"]
-        new_query_params = {**st.query_params, f"lang{tab_number}": languages_key[lang]}
-        # Construct the new URL
-        base_url = st.get_url()
-        new_url = base_url.split('?')[0] + '?' + '&'.join([f"{k}={v}" for k, v in new_query_params.items()])
         
-        # Update the browser URL using JavaScript
-        js_code = f"window.history.replaceState(null, '', '{new_url}');"
-        components.html(f"<script>{js_code}</script>", height=0)
+        # Create a new query parameters dictionary
+        new_query_params = {**st.query_params, f"lang{tab_number}": languages_key[lang]}
+        
+        # Convert query parameters to a query string
+        query_string = "&".join([f"{key}={value}" for key, value in new_query_params.items()])
+        
+        # JavaScript to update the URL
+        js_code = f"""
+        <script>
+        const newUrl = window.location.origin + window.location.pathname + "?{query_string}";
+        window.history.replaceState(null, "", newUrl);
+        </script>
+        """
+        
+        # Inject JavaScript into the Streamlit app
+        components.html(js_code, height=0)
         
         return lang
     return "English"
-
 	
 with tab1:
 	engInfo = "English"
