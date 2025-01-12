@@ -104,104 +104,320 @@ with tab1:
 		st.write("---")
 	
 with tab2:
-	st.header("Get your screening results today!")
-	with st.form("my_form"):
-		name = st.text_input("Please enter your name (first is fine)")
-		contact = st.text_input("Please enter a form of contact i.e. email, phone, etc.")
-		with st.expander("What is your gender by birth?"):
-			gender = st.radio("", ["male", "female"])
-		age = st.slider('What is your age?', 18, 100)
-		sle = st.slider("On average, what is your daily sleep duration in hours?", 1, 24)
-		weight = st.slider("How much do you weigh? in lbs", 80, 300)
-		height = st.slider("How tall are you? in inches", 48, 84)
-		sbp = st.number_input("What is your Systolic blood pressure?", step=1)
-		dbp = st.number_input("What is your Diastolic blood pressure?", step=1)
-		hr = st.number_input("What is your heart rate?", step=1)
-		steps = st.number_input("On average, how many steps do you take in a day?", step=1)
-		physical = st.number_input("On average, how many minutes do you workout in a day?", step=1)
+	engInfo2 = "English"
+	spanInfo2 = "Spanish"
+	hindiInfo2 = "Hindi"
+	languages2 = {"English": engInfo2, "Spanish": spanInfo2, "Hindi": hindiInfo2}
 
-		"""For the following questions, answer on a scale of 0-5 about the last month, where 0 = never, 1 = 1-3 days, 2 = ~1 day per week, 3 = 2-4 nights per week, 4 = 5-6 nights per week, and 5 = almost every night"""
-		qs1 = st.slider("Experienced difficulty falling asleep?", 0, 5)
-		qs2 = st.slider("Woken up at night and easily fell asleep again?", 0, 5)
-		qs3 = st.slider("Woken up and had difficulty falling asleep again / difficulty staying asleep?", 0, 5)
-		qs4 = st.slider("Non-restorative sleep? i.e. feeling tired or worn-out after getting a usual amount of sleep", 0, 5)
-
-		"""For the following questions, answer on a scale of 0-4 about the last month, where 0 = never, 1 = almost never, 2 = sometimes, 3 = fairly often, and 4 = very often"""
-		sl1 = st.slider("How often have you been upset because of something that happened unexpectedly?", 0, 4)
-		sl2 = st.slider("How often have you felt that you were unable to control the important things in your life?", 0, 4)
-		sl3 = st.slider("How often have you felt nervous and stressed?", 0, 4)
-		sl4 = st.slider("How often have you felt confident about your ability to handle your personal problems?", 0, 4)
-		sl5 = st.slider("How often have you felt that things were going your way?", 0, 4)
-		sl6 = st.slider("How often have you found that you could not cope with all the things that you had to do?", 0, 4)
-		sl7 = st.slider("How often have you been able to control irritations in your life?", 0, 4)
-		sl8 = st.slider("How often have you felt that you were on top of things?", 0, 4)
-		sl9 = st.slider("How often have you been angered because of things that happened that were outside of your control?", 0, 4)
-		sl10 = st.slider("How often have you felt difficulties were piling up so high that you could not overcome them?", 0, 4)
-			  
-		sub = st.form_submit_button('Submit')
-		if sub:
-			qs = (qs1+qs2+qs3+qs4)//2
-			sl = (sl1+sl2+sl3+(4-sl4)+(4-sl5)+sl6+(4-sl7)+(4-sl8)+sl9+sl10)//4
-			bmi = (weight/(height**2)) * 703
-			if bmi < 18.5:
-				bm = 0
-			elif bmi >= 18.5 and bmi < 25:
-				bm = 1
-			elif bmi >= 25 and bmi < 30:
-				bm = 2
-			else:
-				bm = 3
-			if gender == 'female':
-				gn = 0
-			else:
-				gn = 1
-			inp = [[gn,age,sle,qs,physical,sl,bm,hr,steps,sbp,dbp]]
-			model = load_model()
-			new = model.predict(inp)
-			prediction = ""
-			if new == 0:
-				st.write("You have a healthy sleep")
-				prediction = "healthy"
-			elif new == 1:
-				st.write("You might have Insomnia, please visit a doctor")
-				prediction = "insomnia"
-			elif new == 2:
-				st.write("You might have Sleep Apnea, please visit a doctor")
-				prediction = "sleep apnea"
-			ts = time.time()
-			ts = str(ts).split('.')[0]
-			# This time, we're creating a NEW post reference for Apple
-			doc_ref = db.collection("userData").document(ts)
+	sel_lang2 = st.radio(
+        	"Language",
+        	options=languages.keys(),
+        	horizontal=True,
+        	key="selected_language1",
+    	)
+	selected_language2 = set_language(1, languages2)
+	
+	st.markdown(f"Selected Language: {selected_language2}")
+	if selected_language2 == "English":
+		st.header("Get your screening results today!")
+		with st.form("my_form"):
+			name = st.text_input("Please enter your name (first is fine)")
+			contact = st.text_input("Please enter a form of contact i.e. email, phone, etc.")
+			with st.expander("What is your gender by birth?"):
+				gender = st.radio("", ["male", "female"])
+			age = st.slider('What is your age?', 18, 100)
+			sle = st.slider("On average, what is your daily sleep duration in hours?", 1, 24)
+			weight = st.slider("How much do you weigh? in lbs", 80, 300)
+			height = st.slider("How tall are you? in inches", 48, 84)
+			sbp = st.number_input("What is your Systolic blood pressure?", step=1)
+			dbp = st.number_input("What is your Diastolic blood pressure?", step=1)
+			hr = st.number_input("What is your heart rate?", step=1)
+			steps = st.number_input("On average, how many steps do you take in a day?", step=1)
+			physical = st.number_input("On average, how many minutes do you workout in a day?", step=1)
+	
+			"""For the following questions, answer on a scale of 0-5 about the last month, where 0 = never, 1 = 1-3 days, 2 = ~1 day per week, 3 = 2-4 nights per week, 4 = 5-6 nights per week, and 5 = almost every night"""
+			qs1 = st.slider("Experienced difficulty falling asleep?", 0, 5)
+			qs2 = st.slider("Woken up at night and easily fell asleep again?", 0, 5)
+			qs3 = st.slider("Woken up and had difficulty falling asleep again / difficulty staying asleep?", 0, 5)
+			qs4 = st.slider("Non-restorative sleep? i.e. feeling tired or worn-out after getting a usual amount of sleep", 0, 5)
+	
+			"""For the following questions, answer on a scale of 0-4 about the last month, where 0 = never, 1 = almost never, 2 = sometimes, 3 = fairly often, and 4 = very often"""
+			sl1 = st.slider("How often have you been upset because of something that happened unexpectedly?", 0, 4)
+			sl2 = st.slider("How often have you felt that you were unable to control the important things in your life?", 0, 4)
+			sl3 = st.slider("How often have you felt nervous and stressed?", 0, 4)
+			sl4 = st.slider("How often have you felt confident about your ability to handle your personal problems?", 0, 4)
+			sl5 = st.slider("How often have you felt that things were going your way?", 0, 4)
+			sl6 = st.slider("How often have you found that you could not cope with all the things that you had to do?", 0, 4)
+			sl7 = st.slider("How often have you been able to control irritations in your life?", 0, 4)
+			sl8 = st.slider("How often have you felt that you were on top of things?", 0, 4)
+			sl9 = st.slider("How often have you been angered because of things that happened that were outside of your control?", 0, 4)
+			sl10 = st.slider("How often have you felt difficulties were piling up so high that you could not overcome them?", 0, 4)
+				  
+			sub = st.form_submit_button('Submit')
+			if sub:
+				qs = (qs1+qs2+qs3+qs4)//2
+				sl = (sl1+sl2+sl3+(4-sl4)+(4-sl5)+sl6+(4-sl7)+(4-sl8)+sl9+sl10)//4
+				bmi = (weight/(height**2)) * 703
+				if bmi < 18.5:
+					bm = 0
+				elif bmi >= 18.5 and bmi < 25:
+					bm = 1
+				elif bmi >= 25 and bmi < 30:
+					bm = 2
+				else:
+					bm = 3
+				if gender == 'female':
+					gn = 0
+				else:
+					gn = 1
+				inp = [[gn,age,sle,qs,physical,sl,bm,hr,steps,sbp,dbp]]
+				model = load_model()
+				new = model.predict(inp)
+				prediction = ""
+				if new == 0:
+					st.write("You have a healthy sleep")
+					prediction = "healthy"
+				elif new == 1:
+					st.write("You might have Insomnia, please visit a doctor")
+					prediction = "insomnia"
+				elif new == 2:
+					st.write("You might have Sleep Apnea, please visit a doctor")
+					prediction = "sleep apnea"
+				ts = time.time()
+				ts = str(ts).split('.')[0]
+				# This time, we're creating a NEW post reference for Apple
+				doc_ref = db.collection("userData").document(ts)
+				
+				# And then uploading some data to that reference
+				doc_ref.set({
+					"username": name,
+					"contact": contact,
+					"age": age,
+					"sleep duration": sle,
+					"weight": weight,
+					"height": height,
+					"systolic bp": sbp,
+					"diastolic bp": dbp,
+					"heart rate": hr,
+					"daily steps": steps,
+					"daily physical activity": physical,
+					"JSS1": qs1,
+					"JSS2": qs2,
+					"JSS3": qs3,
+					"JSS4": qs4,
+					"PSS1": sl1,
+					"PSS2": sl2,
+					"PSS3": sl3,
+					"PSS4": sl4,
+					"PSS5": sl5,
+					"PSS6": sl6,
+					"PSS7": sl7,
+					"PSS8": sl8,
+					"PSS9": sl9,
+					"PSS10": sl10,
+					"prediction": prediction
+				})
+	if selected_language2 == "Spanish":
+		st.header("¡Obtenga los resultados de su examen hoy!")
+		with st.form("my_form"):
+			name = st.text_input("Por favor ingresa tu nombre (solo el primero está bien)")
+			contact = st.text_input("Por favor ingresa una forma de contacto, por ejemplo, correo electrónico, teléfono, etc.")
+			with st.expander("¿Cuál es tu género de nacimiento?"):
+			    gender = st.radio("", ["masculino", "femenino"])
+			age = st.slider('¿Cuál es tu edad?', 18, 100)
+			sle = st.slider("¿En promedio, cuántas horas duermes al día?", 1, 24)
+			weight = st.slider("¿Cuánto pesas? en libras", 80, 300)
+			height = st.slider("¿Cuánto mides? en pulgadas", 48, 84)
+			sbp = st.number_input("¿Cuál es tu presión arterial sistólica?", step=1)
+			dbp = st.number_input("¿Cuál es tu presión arterial diastólica?", step=1)
+			hr = st.number_input("¿Cuál es tu frecuencia cardíaca?", step=1)
+			steps = st.number_input("En promedio, ¿cuántos pasos das al día?", step=1)
+			physical = st.number_input("En promedio, ¿cuántos minutos haces ejercicio al día?", step=1)
 			
-			# And then uploading some data to that reference
-			doc_ref.set({
-				"username": name,
-				"contact": contact,
-				"age": age,
-				"sleep duration": sle,
-				"weight": weight,
-				"height": height,
-				"systolic bp": sbp,
-				"diastolic bp": dbp,
-				"heart rate": hr,
-				"daily steps": steps,
-				"daily physical activity": physical,
-				"JSS1": qs1,
-				"JSS2": qs2,
-				"JSS3": qs3,
-				"JSS4": qs4,
-				"PSS1": sl1,
-				"PSS2": sl2,
-				"PSS3": sl3,
-				"PSS4": sl4,
-				"PSS5": sl5,
-				"PSS6": sl6,
-				"PSS7": sl7,
-				"PSS8": sl8,
-				"PSS9": sl9,
-				"PSS10": sl10,
-				"prediction": prediction
-			})
+			"""Para las siguientes preguntas, responde en una escala de 0 a 5 sobre el último mes, donde 0 = nunca, 1 = 1-3 días, 2 = ~1 día por semana, 3 = 2-4 noches por semana, 4 = 5-6 noches por semana, y 5 = casi todas las noches"""
+			qs1 = st.slider("¿Experimentaste dificultad para quedarte dormido?", 0, 5)
+			qs2 = st.slider("¿Te despertaste por la noche y te volviste a dormir fácilmente?", 0, 5)
+			qs3 = st.slider("¿Te despertaste y tuviste dificultad para volver a dormir o para mantener el sueño?", 0, 5)
+			qs4 = st.slider("¿Sueño no reparador? es decir, ¿sentirse cansado o agotado después de dormir la cantidad habitual?", 0, 5)
+			
+			"""Para las siguientes preguntas, responde en una escala de 0 a 4 sobre el último mes, donde 0 = nunca, 1 = casi nunca, 2 = a veces, 3 = con bastante frecuencia, y 4 = muy a menudo"""
+			sl1 = st.slider("¿Con qué frecuencia te has sentido molesto por algo que ocurrió inesperadamente?", 0, 4)
+			sl2 = st.slider("¿Con qué frecuencia has sentido que no podías controlar las cosas importantes en tu vida?", 0, 4)
+			sl3 = st.slider("¿Con qué frecuencia te has sentido nervioso y estresado?", 0, 4)
+			sl4 = st.slider("¿Con qué frecuencia te has sentido confiado en tu capacidad para resolver tus problemas personales?", 0, 4)
+			sl5 = st.slider("¿Con qué frecuencia has sentido que las cosas iban bien para ti?", 0, 4)
+			sl6 = st.slider("¿Con qué frecuencia has sentido que no podías hacer frente a todas las cosas que tenías que hacer?", 0, 4)
+			sl7 = st.slider("¿Con qué frecuencia has podido controlar las irritaciones en tu vida?", 0, 4)
+			sl8 = st.slider("¿Con qué frecuencia has sentido que tenías todo bajo control?", 0, 4)
+			sl9 = st.slider("¿Con qué frecuencia te has enfadado por cosas que sucedieron fuera de tu control?", 0, 4)
+			sl10 = st.slider("¿Con qué frecuencia has sentido que las dificultades se acumulaban tanto que no podías superarlas?", 0, 4)
+
+			sub = st.form_submit_button('Submit')
+			if sub:
+				qs = (qs1+qs2+qs3+qs4)//2
+				sl = (sl1+sl2+sl3+(4-sl4)+(4-sl5)+sl6+(4-sl7)+(4-sl8)+sl9+sl10)//4
+				bmi = (weight/(height**2)) * 703
+				if bmi < 18.5:
+					bm = 0
+				elif bmi >= 18.5 and bmi < 25:
+					bm = 1
+				elif bmi >= 25 and bmi < 30:
+					bm = 2
+				else:
+					bm = 3
+				if gender == 'female':
+					gn = 0
+				else:
+					gn = 1
+				inp = [[gn,age,sle,qs,physical,sl,bm,hr,steps,sbp,dbp]]
+				model = load_model()
+				new = model.predict(inp)
+				prediction = ""
+				if new == 0:
+					st.write("You have a healthy sleep")
+					prediction = "healthy"
+				elif new == 1:
+					st.write("You might have Insomnia, please visit a doctor")
+					prediction = "insomnia"
+				elif new == 2:
+					st.write("You might have Sleep Apnea, please visit a doctor")
+					prediction = "sleep apnea"
+				ts = time.time()
+				ts = str(ts).split('.')[0]
+				# This time, we're creating a NEW post reference for Apple
+				doc_ref = db.collection("userData").document(ts)
+				
+				# And then uploading some data to that reference
+				doc_ref.set({
+					"username": name,
+					"contact": contact,
+					"age": age,
+					"sleep duration": sle,
+					"weight": weight,
+					"height": height,
+					"systolic bp": sbp,
+					"diastolic bp": dbp,
+					"heart rate": hr,
+					"daily steps": steps,
+					"daily physical activity": physical,
+					"JSS1": qs1,
+					"JSS2": qs2,
+					"JSS3": qs3,
+					"JSS4": qs4,
+					"PSS1": sl1,
+					"PSS2": sl2,
+					"PSS3": sl3,
+					"PSS4": sl4,
+					"PSS5": sl5,
+					"PSS6": sl6,
+					"PSS7": sl7,
+					"PSS8": sl8,
+					"PSS9": sl9,
+					"PSS10": sl10,
+					"prediction": prediction
+				})
+	if selected_language2 == "Hindi":
+		st.header("Obtenga los resultados de su examen hoy!")
+		with st.form("my_form"):
+			name = st.text_input("कृपया अपना नाम दर्ज करें (पहला नाम ठीक है)")
+			contact = st.text_input("कृपया एक संपर्क विधि दर्ज करें, जैसे कि ईमेल, फोन, आदि।")
+			with st.expander("आपका जन्म के समय लिंग क्या है?"):
+			    gender = st.radio("", ["पुरुष", "महिला"])
+			age = st.slider('आपकी उम्र कितनी है?', 18, 100)
+			sle = st.slider("औसतन, आप एक दिन में कितने घंटे सोते हैं?", 1, 24)
+			weight = st.slider("आपका वजन कितना है? पाउंड में", 80, 300)
+			height = st.slider("आपकी ऊंचाई कितनी है? इंच में", 48, 84)
+			sbp = st.number_input("आपका सिस्टोलिक रक्तचाप कितना है?", step=1)
+			dbp = st.number_input("आपका डायस्टोलिक रक्तचाप कितना है?", step=1)
+			hr = st.number_input("आपकी हृदय गति कितनी है?", step=1)
+			steps = st.number_input("औसतन, आप एक दिन में कितने कदम चलते हैं?", step=1)
+			physical = st.number_input("औसतन, आप एक दिन में कितने मिनट व्यायाम करते हैं?", step=1)
+			
+			"""नीचे दिए गए प्रश्नों का उत्तर पिछले महीने के बारे में 0 से 5 के पैमाने पर दें, जहां 0 = कभी नहीं, 1 = 1-3 दिन, 2 = ~1 दिन प्रति सप्ताह, 3 = 2-4 रातें प्रति सप्ताह, 4 = 5-6 रातें प्रति सप्ताह, और 5 = लगभग हर रात"""
+			qs1 = st.slider("क्या आपको सोने में कठिनाई हुई?", 0, 5)
+			qs2 = st.slider("क्या आप रात में उठे और आसानी से फिर से सो गए?", 0, 5)
+			qs3 = st.slider("क्या आप जागे और फिर से सोने में कठिनाई हुई या सोते रहने में समस्या हुई?", 0, 5)
+			qs4 = st.slider("क्या यह सोने से थका हुआ महसूस हुआ? यानी सामान्य मात्रा में सोने के बाद भी थका हुआ या थका हुआ महसूस हुआ", 0, 5)
+			
+			"""नीचे दिए गए प्रश्नों का उत्तर पिछले महीने के बारे में 0 से 4 के पैमाने पर दें, जहां 0 = कभी नहीं, 1 = कभी-कभी नहीं, 2 = कभी-कभी, 3 = अक्सर, और 4 = बहुत बार"""
+			sl1 = st.slider("क्या आपको किसी अप्रत्याशित घटना के कारण परेशान होने की स्थिति महसूस हुई?", 0, 4)
+			sl2 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप अपनी जीवन की महत्वपूर्ण बातों को नियंत्रित नहीं कर पा रहे हैं?", 0, 4)
+			sl3 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप नर्वस और तनावग्रस्त थे?", 0, 4)
+			sl4 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप अपनी व्यक्तिगत समस्याओं को सुलझाने में सक्षम हैं?", 0, 4)
+			sl5 = st.slider("क्या आपको ऐसा महसूस हुआ कि चीजें आपके अनुसार हो रही हैं?", 0, 4)
+			sl6 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप उन सभी चीजों से निपटने में सक्षम नहीं थे जो आपको करनी थीं?", 0, 4)
+			sl7 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप अपनी जिंदगी की परेशानियों को नियंत्रित कर सकते थे?", 0, 4)
+			sl8 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप चीजों को संभालने में सक्षम थे?", 0, 4)
+			sl9 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप उन चीजों से गुस्से में थे जो आपके नियंत्रण से बाहर थीं?", 0, 4)
+			sl10 = st.slider("क्या आपको ऐसा महसूस हुआ कि समस्याएँ इतनी बढ़ गईं कि आप उन्हें पार नहीं कर सकते थे?", 0, 4)
+
+			sub = st.form_submit_button('Submit')
+			if sub:
+				qs = (qs1+qs2+qs3+qs4)//2
+				sl = (sl1+sl2+sl3+(4-sl4)+(4-sl5)+sl6+(4-sl7)+(4-sl8)+sl9+sl10)//4
+				bmi = (weight/(height**2)) * 703
+				if bmi < 18.5:
+					bm = 0
+				elif bmi >= 18.5 and bmi < 25:
+					bm = 1
+				elif bmi >= 25 and bmi < 30:
+					bm = 2
+				else:
+					bm = 3
+				if gender == 'female':
+					gn = 0
+				else:
+					gn = 1
+				inp = [[gn,age,sle,qs,physical,sl,bm,hr,steps,sbp,dbp]]
+				model = load_model()
+				new = model.predict(inp)
+				prediction = ""
+				if new == 0:
+					st.write("You have a healthy sleep")
+					prediction = "healthy"
+				elif new == 1:
+					st.write("You might have Insomnia, please visit a doctor")
+					prediction = "insomnia"
+				elif new == 2:
+					st.write("You might have Sleep Apnea, please visit a doctor")
+					prediction = "sleep apnea"
+				ts = time.time()
+				ts = str(ts).split('.')[0]
+				# This time, we're creating a NEW post reference for Apple
+				doc_ref = db.collection("userData").document(ts)
+				
+				# And then uploading some data to that reference
+				doc_ref.set({
+					"username": name,
+					"contact": contact,
+					"age": age,
+					"sleep duration": sle,
+					"weight": weight,
+					"height": height,
+					"systolic bp": sbp,
+					"diastolic bp": dbp,
+					"heart rate": hr,
+					"daily steps": steps,
+					"daily physical activity": physical,
+					"JSS1": qs1,
+					"JSS2": qs2,
+					"JSS3": qs3,
+					"JSS4": qs4,
+					"PSS1": sl1,
+					"PSS2": sl2,
+					"PSS3": sl3,
+					"PSS4": sl4,
+					"PSS5": sl5,
+					"PSS6": sl6,
+					"PSS7": sl7,
+					"PSS8": sl8,
+					"PSS9": sl9,
+					"PSS10": sl10,
+					"prediction": prediction
+				})
+
+
+		
 
 with tab3:
 	st.subheader("Find out more about OSA")
