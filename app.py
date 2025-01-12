@@ -25,9 +25,13 @@ def load_model():
 def set_language(tab_number, languages_key):
     if f"selected_language{tab_number}" in st.session_state:
         lang = st.session_state[f"selected_language{tab_number}"]
-        st.experimental_set_query_params(**{**st.query_params, f"lang{tab_number}": languages_key[lang]})
+        # Create a new query parameters dictionary
+        new_query_params = {**st.query_params, f"lang{tab_number}": languages_key[lang]}
+        # Update the URL
+        st.experimental_set_query_params(**new_query_params)
         return lang
     return "English"
+
 	
 with tab1:
 	engInfo = "English"
