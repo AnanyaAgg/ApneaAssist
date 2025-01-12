@@ -21,14 +21,19 @@ data = np.random.randn(10, 1)
 def load_model():
 	mod = joblib.load('best_random_forest_model.joblib')
 	return mod
-	
+
 def set_language(tab_number, languages_key):
     if f"selected_language{tab_number}" in st.session_state:
         lang = st.session_state[f"selected_language{tab_number}"]
-        # Create a new query parameters dictionary
         new_query_params = {**st.query_params, f"lang{tab_number}": languages_key[lang]}
-        # Update the URL
-        st.experimental_set_query_params(**new_query_params)
+        # Construct the new URL
+        base_url = st.get_url()
+        new_url = base_url.split('?')[0] + '?' + '&'.join([f"{k}={v}" for k, v in new_query_params.items()])
+        
+        # Update the browser URL using JavaScript
+        js_code = f"window.history.replaceState(null, '', '{new_url}');"
+        components.html(f"<script>{js_code}</script>", height=0)
+        
         return lang
     return "English"
 
