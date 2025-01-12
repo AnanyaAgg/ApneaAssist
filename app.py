@@ -113,7 +113,7 @@ with tab2:
         	"Language",
         	options=languages.keys(),
         	horizontal=True,
-        	key="selected_language1",
+        	key="selected_language2",
     	)
 	selected_language2 = set_language(1, languages2)
 	
