@@ -317,7 +317,7 @@ with tab2:
 					"prediction": prediction
 				})
 	if selected_language2 == "Hindi":
-		st.header("Obtenga los resultados de su examen hoy!")
+		st.header("आज ही अपना परीक्षा परिणाम प्राप्त करें!")
 		with st.form("my_form"):
 			name = st.text_input("कृपया अपना नाम दर्ज करें (पहला नाम ठीक है)")
 			contact = st.text_input("कृपया एक संपर्क विधि दर्ज करें, जैसे कि ईमेल, फोन, आदि।")
