@@ -274,13 +274,13 @@ with tab2:
 				new = model.predict(inp)
 				prediction = ""
 				if new == 0:
-					st.write("You have a healthy sleep")
+					st.write("Tienes un sueño saludable.")
 					prediction = "healthy"
 				elif new == 1:
-					st.write("You might have Insomnia, please visit a doctor")
+					st.write("Es posible que tengas insomnio, visita a un médico.")
 					prediction = "insomnia"
 				elif new == 2:
-					st.write("You might have Sleep Apnea, please visit a doctor")
+					st.write("Es posible que tengas apnea del sueño, visita a un médico.")
 					prediction = "sleep apnea"
 				ts = time.time()
 				ts = str(ts).split('.')[0]
@@ -351,7 +351,7 @@ with tab2:
 			sl9 = st.slider("क्या आपको ऐसा महसूस हुआ कि आप उन चीजों से गुस्से में थे जो आपके नियंत्रण से बाहर थीं?", 0, 4)
 			sl10 = st.slider("क्या आपको ऐसा महसूस हुआ कि समस्याएँ इतनी बढ़ गईं कि आप उन्हें पार नहीं कर सकते थे?", 0, 4)
 
-			sub = st.form_submit_button('Submit')
+			sub = st.form_submit_button('भेजें')
 			if sub:
 				qs = (qs1+qs2+qs3+qs4)//2
 				sl = (sl1+sl2+sl3+(4-sl4)+(4-sl5)+sl6+(4-sl7)+(4-sl8)+sl9+sl10)//4
@@ -373,13 +373,13 @@ with tab2:
 				new = model.predict(inp)
 				prediction = ""
 				if new == 0:
-					st.write("You have a healthy sleep")
+					st.write("आपको स्वस्थ नींद आती है")
 					prediction = "healthy"
 				elif new == 1:
-					st.write("You might have Insomnia, please visit a doctor")
+					st.write("आपको अनिद्रा हो सकती है, कृपया डॉक्टर से मिलें")
 					prediction = "insomnia"
 				elif new == 2:
-					st.write("You might have Sleep Apnea, please visit a doctor")
+					st.write("आपको स्लीप एपनिया हो सकता है, कृपया डॉक्टर से मिलें")
 					prediction = "sleep apnea"
 				ts = time.time()
 				ts = str(ts).split('.')[0]
