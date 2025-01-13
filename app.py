@@ -252,7 +252,7 @@ with tab2:
 			sl9 = st.slider("¿Con qué frecuencia te has enfadado por cosas que sucedieron fuera de tu control?", 0, 4)
 			sl10 = st.slider("¿Con qué frecuencia has sentido que las dificultades se acumulaban tanto que no podías superarlas?", 0, 4)
 
-			sub = st.form_submit_button('Submit')
+			sub = st.form_submit_button('entregar')
 			if sub:
 				qs = (qs1+qs2+qs3+qs4)//2
 				sl = (sl1+sl2+sl3+(4-sl4)+(4-sl5)+sl6+(4-sl7)+(4-sl8)+sl9+sl10)//4
