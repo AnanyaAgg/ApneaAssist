@@ -115,7 +115,7 @@ with tab2:
         	horizontal=True,
         	key="selected_language2",
     	)
-	selected_language2 = set_language(1, languages2)
+	selected_language2 = set_language(2, languages2)
 	
 	st.markdown(f"Selected Language: {selected_language2}")
 	if selected_language2 == "English":
