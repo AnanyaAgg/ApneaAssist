@@ -447,7 +447,8 @@ with tab4:
 	st.header("Join the Against Obstructive Sleep Apnea by Donating Now!")
 	col1, col2 = st.columns([0.38, 0.62])
 
-	youtube_url1 = "https://www.youtube.com/embed/g665P3z8sGk"
+	with col1:
+		youtube_url1 = "https://www.youtube.com/embed/g665P3z8sGk"
 		youtube_iframe1 = f'''
 		<iframe
 		  width="100%"
