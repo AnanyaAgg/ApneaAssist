@@ -446,20 +446,20 @@ with tab3:
 with tab4:
 	st.header("Join the Against Obstructive Sleep Apnea by Donating Now!")
 	col1, col2 = st.columns([0.38, 0.62])
-	
-	with col1:
-		gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
-		
-		gofundme_iframe = f'''
-		<iframe
-		  src="{gofundme_url}"
-		  style="height: 180px; width: 100%;"
-		  frameborder="0"
-		  scrolling="yes"
-		></iframe>
-		'''
-		st.markdown(gofundme_iframe, unsafe_allow_html=True)
-
+	''' 
+		with col1:
+			gofundme_url = "https://www.gofundme.com/f/join-the-fight-against-sleep-apnea/widget/medium?sharesheet=CAMPAIGN_PAGE&attribution_id=sl:b1feb9fb-cbab-4945-af87-4c4286a75742"
+			
+			gofundme_iframe = f'''
+			<iframe
+			  src="{gofundme_url}"
+			  style="height: 180px; width: 100%;"
+			  frameborder="0"
+			  scrolling="yes"
+			></iframe>
+			'''
+			st.markdown(gofundme_iframe, unsafe_allow_html=True)
+	'''
 		youtube_url1 = "https://www.youtube.com/embed/g665P3z8sGk"
 		youtube_iframe1 = f'''
 		<iframe
